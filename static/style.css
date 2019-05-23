@@ -1,0 +1,32 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin: 0;
+    height: 0;
+}
+/*CONTAINER PARA CENTRALIZAR*/
+.container-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(to right bottom, #233237, #283b4b, #3c405c, #5d4263, #7d425d, #934b5a, #a55754, #b1674d, #c27d56, #d1955f, #dfad6b, #eac67a);
+}
+/*FIM CONTAINER CENTER*/
+
+/* CARDS */
+.card-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.card-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+/* CARDS  FIM*/
