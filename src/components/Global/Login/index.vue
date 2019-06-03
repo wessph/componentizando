@@ -47,6 +47,10 @@ export default {
     events.$on('btnLogin', () => {
       this.login()
     })
+    events.$off('authenticatedLogin')
+    events.$on('authenticatedLogin', () => {
+      this.$root.authenticated = true
+    })
   },
   methods: {
     login () {
@@ -62,17 +66,17 @@ export default {
         })
       } else {
         axios.post('/login', {email: email, password: password})
-        .then(res => {
-          localStorage.setItem('userComponent', JSON.stringify(res.data))
-          _this.$notify({
-            group: 'foo',
-            type: 'success',
-            title: 'Uhul!',
-            text: 'Logado com sucesso!'
-          })
-
-          _this.$router.push({ path: '/dashboard' })
-        }).catch(error => {
+          .then(res => {
+            localStorage.setItem('userComponent', JSON.stringify(res.data))
+            _this.$notify({
+              group: 'foo',
+              type: 'success',
+              title: 'Uhul!',
+              text: 'Logado com sucesso!'
+            })
+            events.$emit('authenticatedLogin')
+            _this.$router.push({ path: '/dashboard' })
+          }).catch(error => {
             _this.$notify({
               group: 'foo',
               type: 'error',
@@ -80,7 +84,7 @@ export default {
               text: 'Usuário ou senha incorreto ou você não tem permissão para acesso!'
             })
             console.log(error)
-        })
+          })
       }
     }
   }
@@ -99,6 +103,4 @@ export default {
   align-items: center;
   justify-content: center;
 }
-</style>
-<style>
 </style>

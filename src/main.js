@@ -18,5 +18,16 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  data () {
+    return {
+      authenticated: false
+    }
+  },
+  created () {
+    if (localStorage.getItem('userComponent')){
+      return this.authenticated = true
+    }
+    return false
+  }
 })

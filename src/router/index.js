@@ -22,8 +22,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'FormPage',
-      component: FormPage,
+      redirect: '/dashboard',
       beforeEnter: requireAuth
     },
     {

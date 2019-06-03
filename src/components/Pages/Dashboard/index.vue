@@ -1,7 +1,8 @@
 <template>
+  <p>teste</p>
 </template>
 <script>
 export default {
-    name: 'Dashboard'
+  name: 'Dashboard'
 }
 </script>

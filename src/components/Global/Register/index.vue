@@ -66,13 +66,13 @@ export default {
           })
           _this.$router.push({ path: '/login' })
         }).catch(error => {
-            _this.$notify({
-              group: 'foo',
-              type: 'error',
-              title: 'Ops!',
-              text: 'Verifique as informações e teste novamente!'
-            })
-            console.log(error)
+          _this.$notify({
+            group: 'foo',
+            type: 'error',
+            title: 'Ops!',
+            text: 'Verifique as informações e teste novamente!'
+          })
+          console.log(error)
         })
     }
   }
