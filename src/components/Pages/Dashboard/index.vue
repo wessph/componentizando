@@ -66,6 +66,7 @@
 </template>
 <script>
 import Modal from '@/components/Widgets/Modal'
+import axios from 'axios'
 export default {
   name: 'Dashboard',
   components: {
@@ -73,18 +74,31 @@ export default {
   },
   data () {
     return {
+      modalTitle: 'Quiz 1',
       btnAbrirModal: {
         name: 'Quiz',
         class: 'btn btn-dark',
       },
-      formDataBtn: {
-        btnEvent: {'class': 'btn-dark', 'event': 'modal-test-save', 'value': 'SAVE'}
-      },
+      formDataBtn: [
+        {btnEvent: {'class': 'btn-dark', 'event': 'save', 'value': 'SAVE'}},
+        {btnEvent: {'class': 'btn-danger', 'event': 'closeModal', 'value': 'CLOSE'}}
+      ],
       modalComponent: ''
     }
   },
+  mounted() {
+    events.$off("save")
+    events.$on("save",function(){
+      alert('EXECUTA O SAVE')
+    })
+
+    events.$off("closeModal")
+    events.$on("closeModal", () =>{
+      window.$('#modal').modal('hide')
+    })
+  },
   created() {
-    this.modalComponent = {component: () => import('@/components/Widgets/Test'), params: {'btnModal': this.btnAbrirModal, 'formDataBtn': this.formDataBtn}}
+    this.modalComponent = {component: () => import('./components/contentModal'), params: {'btnModal': this.btnAbrirModal, 'formDataBtn': this.formDataBtn, 'modalTitle': this.modalTitle}}
   }
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
-    <div>
-      <buttonForm :fieldButton="formDataBtn.btnEvent"></buttonForm>
-      <buttonForm :fieldButton="formDataBtn.buttonPreview"></buttonForm>
+    <div class="row">
+      <buttonForm class="m-1" v-for="(btn, index) in formDataBtn" :key="index" :fieldButton="btn.btnEvent"></buttonForm>
     </div>
 </template>
 <script>

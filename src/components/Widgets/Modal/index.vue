@@ -1,13 +1,13 @@
 <template>
     <div>
-        <button type="button" :class="content.params.btnModal.class" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" :class="content.params.btnModal.class" data-toggle="modal" data-target="#modal">
             {{ content.params.btnModal.name }}
         </button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <h3 class="modal-title" id="modalLabel">{{ content.params.modalTitle }}</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -32,16 +32,6 @@ export default {
   components: {
     BtnTag
   },
-  props: ['name','title','button', 'content','footer'],
-  created(){
-    events.$on('modal-test-close',function(){
-        alert('FECHA MODAL')
-    })
-  },
-  methods:{
-    dispatch(event){
-      events.$emit('modal-test-' + event)
-    }
-  }
+  props: ['button', 'content','footer']
 }
 </script>
