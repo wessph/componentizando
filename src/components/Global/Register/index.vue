@@ -38,9 +38,9 @@ export default {
           {'name': 'password', 'type': 'password', 'placeholder': 'Digite a senha(*)', 'required': true, value: ''}
         ]}
       ],
-      formDataBtn: {
-        btnEvent: {'class': 'btn-dark', 'event': 'registerEvent', 'value': 'REGISTRAR'}
-      }
+      formDataBtn: [
+        {btnEvent: {'class': 'btn-dark', 'event': 'registerEvent', 'value': 'REGISTRAR'}}
+      ]
     }
   },
   mounted () {
