@@ -40,6 +40,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/form',
+      name: 'FormPage',
+      component: FormPage
     }
   ]
 })

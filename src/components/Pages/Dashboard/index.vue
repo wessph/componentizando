@@ -1,7 +1,6 @@
 <template>
   <div class="container-principal">
     <div class="col">
-      
       <div class="row">
         <div class="col-md-4  mt-4">
           <div class="card">
@@ -66,7 +65,6 @@
 </template>
 <script>
 import Modal from '@/components/Widgets/Modal'
-import axios from 'axios'
 export default {
   name: 'Dashboard',
   components: {
@@ -77,7 +75,7 @@ export default {
       modalTitle: 'Quiz 1',
       btnAbrirModal: {
         name: 'Quiz',
-        class: 'btn btn-dark',
+        class: 'btn btn-dark'
       },
       formDataBtn: [
         {btnEvent: {'class': 'btn-dark', 'event': 'save', 'value': 'SAVE'}},
@@ -86,18 +84,18 @@ export default {
       modalComponent: ''
     }
   },
-  mounted() {
-    events.$off("save")
-    events.$on("save",function(){
+  mounted () {
+    events.$off('save')
+    events.$on('save',function(){
       alert('EXECUTA O SAVE')
     })
 
-    events.$off("closeModal")
-    events.$on("closeModal", () =>{
+    events.$off('closeModal')
+    events.$on('closeModal', () =>{
       window.$('#modal').modal('hide')
     })
   },
-  created() {
+  created () {
     this.modalComponent = {component: () => import('./components/contentModal'), params: {'btnModal': this.btnAbrirModal, 'formDataBtn': this.formDataBtn, 'modalTitle': this.modalTitle}}
   }
 }

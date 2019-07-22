@@ -5,9 +5,8 @@
     </div>
 </template>
 <script>
-import events from '@/utils/events'
 export default {
-    name: "contentModal",
-    props:['params']
+  name: 'contentModal',
+  props: [ 'params' ]
 }
 </script>

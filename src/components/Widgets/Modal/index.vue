@@ -24,7 +24,6 @@
     </div>
 </template>
 <script>
-import events from '@/utils/events'
 import BtnTag from '@/components/Widgets/ButtonsTag'
 
 export default {
@@ -32,6 +31,6 @@ export default {
   components: {
     BtnTag
   },
-  props: ['button', 'content','footer']
+  props: ['button', 'content', 'footer']
 }
 </script>
